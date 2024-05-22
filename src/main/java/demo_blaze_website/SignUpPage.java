@@ -1,0 +1,40 @@
+package demo_blaze_website;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import base_package.BaseClass;
+
+public class SignUpPage extends BaseClass {
+
+	//Getting the locators of username, password ,sign up button and performing actions
+	@FindBy(id = "sign-username")
+	WebElement userName;
+	
+	@FindBy(id = "sign-password")
+	WebElement passWord;
+	
+	@FindBy(css = "button[onclick = 'register()']")
+	WebElement signUpButton;
+	
+	public SignUpPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public Homepage getSignUpButton() throws InterruptedException {
+		signUpButton.click();
+		return new Homepage(driver);
+	}
+	public SignUpPage signUpCred(String user, String pass) {
+		userName.sendKeys(user);
+		passWord.sendKeys(pass);
+		return this;
+	}
+
+	
+	
+	
+}

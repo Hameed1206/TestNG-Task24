@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite"> 
+  <test thread-count="1" name="Test">
+  <parameter name="username" value="Hameed99"></parameter>
+	<parameter name="password" value="Hameed99"></parameter>
+    <classes>
+      <class name="base_package.BaseClass"/>
+      <class name="test_execute.SignUpandLogin"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
